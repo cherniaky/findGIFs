@@ -21,6 +21,12 @@
         refresh('wellcome');
         const button = document.querySelector('button');
         const Form = document.querySelector('input');
+         Form.addEventListener('keyup', function (event) {
+            if (event.keyCode === 13) {
+                refresh(Form.value);
+                Form.value = '';
+            }
+        })
         button.addEventListener('click', function () {
             if (Form.value) {
                 refresh(Form.value);
